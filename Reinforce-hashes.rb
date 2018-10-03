@@ -8,16 +8,12 @@ run = 1
 50.times do
   if run % 2 == 0 && run % 7 == 0
     hh_divisible[run] = run * 2
+  elsif run % 7 == 0
+    hh_divisible[run] = run - 1
+  elsif run % 2 == 0
+    hh_divisible[run] = run + 1
   else
-    if run % 7 == 0
-      hh_divisible[run] = run - 1
-    else
-      if run % 2 == 0
-        hh_divisible[run] = run + 1
-      else
-        hh_divisible[run] = run
-      end
-    end
+    hh_divisible[run] = run
   end
   run +=1
 end
